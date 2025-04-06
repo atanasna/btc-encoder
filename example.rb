@@ -8,7 +8,7 @@ load('lib/wallet.rb')
 # i = 0
 # 10_000.times do
 w = Wallet::Wallet.new
-k = Wallet::Wallet.new(size: 160)
+k = Wallet::Wallet.new(size: 128)
 e = Encoder.encode(w, k)
 d = Encoder.decode(e, k)
 t = Wallet::Wallet.generate_from_phrase(phrase: d.phrase.words.join(' '))

@@ -12,7 +12,7 @@ module Wallet
     end
 
     def self.generate_from_phrase(phrase:)
-      dictionary = File.open('dictionary').read.split("\n")
+      dictionary = File.open('lib/dictionary').read.split("\n")
       words = phrase.split(' ')
       secret_binary_string = ''
 
@@ -122,7 +122,7 @@ module Wallet
       raise 'Secret should be of type Wallet::Secret' unless secret.instance_of? Secret
       raise 'Check should be of type Wallet::Check' unless check.instance_of? Check
 
-      dictionary = File.open('dictionary').read.split("\n")
+      dictionary = File.open('lib/dictionary').read.split("\n")
       all_bits = secret.binary_array + check.binary_array
 
       all_bits
